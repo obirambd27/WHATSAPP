@@ -1,24 +1,30 @@
-app = "your-wwebjs-bot"
-primary_region = "iad"
+# fly.toml app configuration file generated for whatsapp-gnzklw on 2026-09-02T09:49:02Z
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'whatsapp-gnzklw'
+primary_region = 'ams'
 
 [build]
 
 [env]
-  PORT = "8080"
-  SESSION_PATH = "/data/.wwebjs_auth"
+  PORT = '8080'
+  SESSION_PATH = '/data/.wwebjs_auth'
 
 [[mounts]]
-  source = "wwebjs_data"
-  destination = "/data"
+  source = 'wwebjs_data'
+  destination = '/data'
 
 [http_service]
   internal_port = 8080
   force_https = true
-  auto_stop_machines = false
+  auto_stop_machines = 'off'
   auto_start_machines = true
   min_machines_running = 1
 
 [[vm]]
-  memory = "1gb"
-  cpu_kind = "shared"
+  memory = '1gb'
+  cpu_kind = 'shared'
   cpus = 1
+  memory_mb = 1024
